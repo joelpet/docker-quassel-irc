@@ -1,0 +1,13 @@
+core:
+    build: ./quassel-core/
+    ports:
+        - "4242"
+    volumes_from:
+        - data
+
+data:
+    build: ./quassel-core/
+    volumes:
+        - /var/lib/quassel
+    command: true
+
