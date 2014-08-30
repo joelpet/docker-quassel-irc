@@ -8,12 +8,10 @@ RUN apt-get update && \
     apt-get install -y quassel-core
 
 # The setup of quassel-core creates /var/lib/quassel and generates a
-# certificate in there.
+# certificate.
 
-EXPOSE 4242
+RUN rm -rf /var/lib/quassel
 
-# A user `quasselcore` in group `quassel` is also created during setup.
+VOLUME ["/var/lib/quassel"]
 
 USER quasselcore
-
-CMD ["quasselcore", "--configdir=/var/lib/quassel"]
