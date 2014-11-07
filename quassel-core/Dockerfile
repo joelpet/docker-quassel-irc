@@ -1,4 +1,4 @@
-FROM joelpet/debian:testing
+FROM joelpet/debian:jessie
 MAINTAINER Joel Pettersson <petterssonjoel@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
