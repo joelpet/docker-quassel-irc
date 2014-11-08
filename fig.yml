@@ -1,7 +1,7 @@
 core:
     build: ./quassel-core/
     ports:
-        - "4242"
+        - "49153:4242"
     volumes_from:
         - data
 
