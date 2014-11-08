@@ -6,8 +6,7 @@ core:
         - data
 
 data:
-    build: ./quassel-data/
+    build: ./quassel-core/
     volumes:
         - /var/lib/quassel
     command: true
-

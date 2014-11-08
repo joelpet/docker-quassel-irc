@@ -44,3 +44,10 @@ docker run -d -v /var/lib/quassel --name quassel-core_data joelpet/quassel-core 
 # Quassel IRC core
 docker run -d -P --volumes-from quassel-core_data --name quassel-core joelpet/quassel-core
 ```
+
+## Notes
+
+Files in volumes share the owner uid/guid with the host system, so these must
+match with the user inside the container. Run a new container from the same
+image and inspect a file with ln -ln in /tmp created with the current user to
+find out the uid/guid.
