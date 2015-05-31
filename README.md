@@ -6,12 +6,12 @@ core. This is a [docker](https://www.docker.io) image that eases setup.
 
 ## Usage
 
-### Fig
+### Docker Compose
 
-From the directory where fig.yml is located, run:
+From the directory where docker-compose.yml is located, run:
 
 ```bash
-fig up -d
+docker-compose up -d
 ```
 
 ## Backup and restore

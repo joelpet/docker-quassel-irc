@@ -1,9 +1,12 @@
 FROM joelpet/debian:jessie
 MAINTAINER Joel Pettersson <petterssonjoel@gmail.com>
 
-RUN (export DEBIAN_FRONTEND=noninteractive ; \
+RUN (\
+        export DEBIAN_FRONTEND=noninteractive; \
         apt-get update && \
-        apt-get install -y quassel-core)
+        apt-get install -y quassel-core && \
+        rm -rf /var/lib/apt/lists/* \
+    )
 
 # The setup of quassel-core creates /var/lib/quassel and generates a
 # certificate in there.
