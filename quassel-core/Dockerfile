@@ -10,11 +10,10 @@ RUN (\
 
 # The setup of quassel-core creates /var/lib/quassel and generates a
 # certificate in there.
-
-EXPOSE 4242
+COPY quasselCert.pem /var/lib/quassel/
 
 # A user `quasselcore` in group `quassel` is also created during setup.
-
 USER quasselcore
 
+EXPOSE 4242
 CMD ["quasselcore", "--configdir=/var/lib/quassel"]

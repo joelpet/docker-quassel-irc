@@ -1,12 +1,13 @@
-core:
-    build: ./quassel-core/
-    ports:
-        - "49153:4242"
-    volumes_from:
-        - data
+version: '2'
 
-data:
-    build: ./quassel-core/
-    volumes:
-        - /var/lib/quassel
-    command: true
+services:
+    core:
+        build: ./quassel-core/
+        ports:
+            - "49153:4242"
+        # named volume corresponding to data-only-container
+        volumes:
+            - quassel:/var/lib/quassel
+
+volumes:
+    quassel:

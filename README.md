@@ -14,6 +14,13 @@ From the directory where docker-compose.yml is located, run:
 docker-compose up -d
 ```
 
+## SSL certificate
+
+Quassel IRC requires the private key and full (public) keychain be concatenated into a single single as follows:
+
+cat .../privkey.pem .../fullchain.pem > quasselCert.pem
+
+
 ## Backup and restore
 
 Based on the [Managing data in
@@ -34,3 +41,8 @@ Files in volumes share the owner uid/guid with the host system, so these must
 match with the user inside the container. Run a new container from the same
 image and inspect a file with ln -ln in /tmp created with the current user to
 find out the uid/guid.
+
+## TODO
+
+- Give Quassel IRC docker container proper read access to LetsEncrypt SSL certs from host.
+- Figure out, and document how SSL certificate updates should be handled.
