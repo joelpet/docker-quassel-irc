@@ -8,10 +8,6 @@ RUN (\
         rm -rf /var/lib/apt/lists/* \
     )
 
-# The setup of quassel-core creates /var/lib/quassel and generates a
-# certificate in there.
-COPY quasselCert.pem /var/lib/quassel/
-
 # A user `quasselcore` in group `quassel` is also created during setup.
 USER quasselcore
 
