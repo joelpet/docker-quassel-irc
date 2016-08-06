@@ -18,8 +18,11 @@ docker-compose up -d
 
 Quassel IRC requires the private key and full (public) keychain be concatenated into a single single as follows:
 
-cat .../privkey.pem .../fullchain.pem > quasselCert.pem
-
+```bash
+quassel_volume="quasselirc_quassel"
+quassel_cert_path="$(docker volume inspect -f "{{.Mountpoint}}" ${quassel_volume})"/quasselCert.pem
+cat .../{privkey,fullchain}.pem | tee "${quassel_cert_path}"
+```
 
 ## Backup and restore
 
