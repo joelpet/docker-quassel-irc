@@ -1,4 +1,4 @@
-FROM joelpet/debian:jessie
+FROM joelpet/debian:stretch
 MAINTAINER Joel Pettersson <petterssonjoel@gmail.com>
 
 RUN (\
