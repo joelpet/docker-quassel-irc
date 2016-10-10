@@ -3,9 +3,19 @@ MAINTAINER Joel Pettersson <petterssonjoel@gmail.com>
 
 RUN (\
         export DEBIAN_FRONTEND=noninteractive; \
+
         apt-get update && \
-        apt-get install -y quassel-core && \
-        rm -rf /var/lib/apt/lists/* \
+        apt-get install -y \
+            libqt5sql5-sqlite \
+            quassel-core \
+            sqlite3 \
+            && \
+
+        apt-get clean && \
+        rm -rf \
+            /tmp/* \
+            /var/lib/apt/lists/* \
+            /var/tmp/* \
     )
 
 # A user `quasselcore` in group `quassel` is also created during setup.
