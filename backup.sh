@@ -1,5 +1,6 @@
 #!/bin/sh
 docker run \
+    --rm \
     --volumes-from quasselirc_core_1 \
     -v /var/backups/:/backup \
     joelpet/debian:stretch \
