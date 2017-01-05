@@ -19,6 +19,10 @@ docker-compose up -d
 Quassel IRC requires the private key and full (public) keychain be concatenated
 into a single file. See ./install-ssl-cert.sh for details.
 
+On certificate renewal, QuasselIRC (<= 0.12.4) must be restarted for it to be
+used. The next version is likely to feature a signal trap allowing for online
+certificate reload.
+
 ## Backup and restore
 
 Based on the [Managing data in
