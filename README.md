@@ -16,13 +16,8 @@ docker-compose up -d
 
 ## SSL certificate
 
-Quassel IRC requires the private key and full (public) keychain be concatenated into a single single as follows:
-
-```bash
-quassel_volume="quasselirc_quassel"
-quassel_cert_path="$(docker volume inspect -f "{{.Mountpoint}}" ${quassel_volume})"/quasselCert.pem
-cat .../{privkey,fullchain}.pem | tee "${quassel_cert_path}"
-```
+Quassel IRC requires the private key and full (public) keychain be concatenated
+into a single file. See ./install-ssl-cert.sh for details.
 
 ## Backup and restore
 
