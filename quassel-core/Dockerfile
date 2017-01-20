@@ -1,5 +1,5 @@
 FROM joelpet/debian:stretch
-MAINTAINER Joel Pettersson <petterssonjoel@gmail.com>
+LABEL maintainer "Joel Pettersson <petterssonjoel@gmail.com>"
 
 RUN (\
         export DEBIAN_FRONTEND=noninteractive; \
