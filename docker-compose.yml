@@ -8,6 +8,7 @@ services:
         # named volume corresponding to data-only-container
         volumes:
             - quassel:/var/lib/quassel
+        restart: unless-stopped
 
 volumes:
     quassel:
